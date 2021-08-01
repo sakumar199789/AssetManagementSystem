@@ -36,9 +36,9 @@ public boolean dataAuthentication(UserBean a) throws AssetException{
 		Statement stmt=null;
 		boolean temp=false;
 		ResultSet rs=null;
-		
+		Connection conn=null;
 		try{
-			Connection conn=DBConnection.getConnection();
+			conn=DBConnection.getConnection();
 		 stmt=conn.createStatement(); 
 		rs=stmt.executeQuery(IQueryMapper.RETRIEVE_USER_DATA);
 		
@@ -74,11 +74,10 @@ public boolean dataAuthentication(UserBean a) throws AssetException{
 		}
 		
 		finally{
-			try{
-				
-			
+			try{			
 			rs.close();
 			stmt.close();
+			conn.close();
 		}
 			catch(Exception e)
 			{
