@@ -31,7 +31,12 @@ public class AssetTest {
 		user.setUserNameId("Sai");
 		user.setPassword("Sai@1997");
 		
-		assertEquals(true,iAsset.dataAuthentication(user));
+		try {
+			assertEquals(true,iAsset.dataAuthentication(user));
+		} catch (AssetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
 	
 	}
@@ -42,7 +47,12 @@ public class AssetTest {
 		user.setUserNameId("Dinesh");
 		user.setPassword("Dines@123");
 		
-		assertEquals(true,iAsset.dataAuthentication(user));
+		try {
+			assertEquals(true,iAsset.dataAuthentication(user));
+		} catch (AssetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 }
 	
 
